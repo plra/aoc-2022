@@ -1,3 +1,7 @@
+RPS_VALUES = [1, 2, 3]
+CODE_VALUES = dict(zip("ABCXYZ", RPS_VALUES * 2))
+
+
 def round_score(opp_val, p_val):
     round_score = p_val
     # Outcome of RPS is uniquely determined by difference in values mod 3, where R,P,S = 1,2,3
@@ -10,8 +14,6 @@ def round_score(opp_val, p_val):
 
 
 total_score = 0
-RPS_VALUES = [1, 2, 3]
-CODE_VALUES = dict(zip("ABCXYZ", RPS_VALUES * 2))
 
 with open("input.txt") as f:
     for line in f:

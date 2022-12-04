@@ -1,12 +1,14 @@
 from p1 import round_score, RPS_VALUES
 
+OPP_CODE_VALUES = dict(zip("ABC", RPS_VALUES))
+
+
 total_score = 0
-opp_code_values = dict(zip("ABC", RPS_VALUES))
 
 with open("input.txt") as f:
     for line in f:
         opp_code, p_code = line.strip().split()
-        opp_val = opp_code_values[opp_code]
+        opp_val = OPP_CODE_VALUES[opp_code]
         # To determine P's response, we rotate "rps" right, left or not at all if P must lose, draw
         # or win, respectively. E.g. if p_code == "X", P loses, and R/P/S is met with S/R/P
         # (rotate right 1).
