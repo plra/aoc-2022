@@ -18,9 +18,8 @@ def size_dirs(input_filename):
             elif re.match(r"^\d+ .*", line):
                 size = int(line.split()[0])
                 for dir in dir_sizes.keys():
-                    if cwd.startswith(dir) and cwd != dir:
+                    if cwd.startswith(dir):  # Includes dir == cwd
                         dir_sizes[dir] += size
-                dir_sizes[cwd] += size
     return dir_sizes
 
 
